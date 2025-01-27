@@ -10,7 +10,9 @@ public class Main {
         for (Thread thread : list) {
             thread.start();
         }
-        Thread.sleep(7000);
+        for (Thread thread : list) {
+            thread.join();
+        }
         System.out.println("Výroba dokončena! Celkový počet vyrobených produktů: "+ Tovarna.getPocetProduktu());
 
         VyrobniLinka best = list.get(0);
